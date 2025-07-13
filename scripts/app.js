@@ -1,9 +1,10 @@
 // constants
 const keyboardElem = document.querySelector(".keyboard");
 const guessingWordElem = document.querySelectorAll(".letters");
-let position = 0;
-let count = 0;
-let count2 = 0;
+let position = -1;
+let arrayCount = 0;
+let displayCount = 0;
+let guessCount;
 const guessOne = [];
 const currentGuess = [];
 const chosenWord = ["A", "D", "M", "I", "N"];
@@ -52,32 +53,30 @@ enterButton.addEventListener("click", function () {
   if (currentGuess.length === 5) {
     check();
     currentGuess.length = 0;
-    count = 0;
+    arrayCount = 0;
   }
 });
 
 // update display function
 function updateLetters() {
-  guessingWordElem[count2].textContent = currentGuess[count];
-  count++;
-  count2++;
+  guessingWordElem[displayCount].textContent = currentGuess[arrayCount];
+  arrayCount++;
+  displayCount++;
+  position++;
   console.log(currentGuess); // delete later
 }
 
 // delete letter function
 function deleteLetter() {
   currentGuess.pop();
-  count--;
-  count2--;
-  guessingWordElem[count].textContent = "";
+  arrayCount--;
+  displayCount--;
+  console.log(position);
+  guessingWordElem[position].textContent = "";
+  position--;
 }
 
 // checking if the guess is correct function
-function check() {
-  for (let i = 0; i < currentGuess.length; i++)
-    if (currentGuess[i] === chosenWord[i]) {
-      guessingWordElem[i].style.backgroundColor = "#1bb152";
-    }
-}
+function check() {}
 function init() {}
 init();
