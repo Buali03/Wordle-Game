@@ -25,6 +25,7 @@ for (let i = 65; i <= 90; i++) {
     }
   });
 }
+
 // creating delete button
 const deleteButton = document.createElement("button");
 deleteButton.innerText = "DELETE";
@@ -47,7 +48,6 @@ enterButton.classList.add("ent");
 keyboardElem.appendChild(enterButton);
 
 // enter button event listner
-
 enterButton.addEventListener("click", function () {
   if (currentGuess.length === 5) {
     check();
@@ -69,7 +69,9 @@ function deleteLetter() {
   currentGuess.pop();
   count--;
   count2--;
+  guessingWordElem[count].textContent = "";
 }
+
 // checking if the guess is correct function
 function check() {
   for (let i = 0; i < currentGuess.length; i++)
