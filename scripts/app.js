@@ -51,7 +51,7 @@ keyboardElem.appendChild(enterButton);
 enterButton.addEventListener("click", function () {
   if (currentGuess.length === 5) {
     check();
-    position += 5;
+    currentGuess.length = 0;
     count = 0;
   }
 });
