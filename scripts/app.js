@@ -9,6 +9,14 @@ for (let i = 65; i <= 90; i++) {
     init();
   });
 }
+const deleteButton = document.createElement("button");
+deleteButton.innerText = "DELETE";
+deleteButton.classList.add("del");
+keyboardElem.appendChild(deleteButton);
 
+const enterButton = document.createElement("button");
+enterButton.innerText = "ENTER";
+enterButton.classList.add("ent");
+keyboardElem.appendChild(enterButton);
 function init() {}
 init();
