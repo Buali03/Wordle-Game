@@ -13,9 +13,6 @@ header {
   display: flex;
   justify-content: center;
 }
-.theme-switch {
-  align-self: flex-end;
-}
 h1 {
   color: var(--text-color);
   text-align: center;
@@ -103,6 +100,7 @@ section.options {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 /* how to play button */
 button.tutorial {
