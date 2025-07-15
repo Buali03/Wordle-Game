@@ -1,8 +1,10 @@
-// constants
+// CONSTANTS
 const keyboardElem = document.querySelector(".keyboard");
 const guessingWordElem = document.querySelectorAll(".letters");
 const themeSwitchElem = document.querySelector(".theme-switch");
 const bodyElem = document.querySelector("body");
+
+// VARIABLES
 let arrayCount = 0;
 let displayCount = 0;
 let wordCount = 0;
@@ -32,27 +34,13 @@ deleteButton.innerText = "DELETE";
 deleteButton.classList.add("del");
 keyboardElem.appendChild(deleteButton);
 
-// delete button event listener
-deleteButton.addEventListener("click", function () {
-  if (currentGuess.length > 0) {
-    deleteLetter();
-  }
-});
-
 // creating enter button
 const enterButton = document.createElement("button");
 enterButton.innerText = "ENTER";
 enterButton.classList.add("ent");
 keyboardElem.appendChild(enterButton);
 
-// enter button event listner
-enterButton.addEventListener("click", function () {
-  if (currentGuess.length === 5) {
-    checkGuess();
-    currentGuess.length = 0;
-    arrayCount = 0;
-  }
-});
+// FUNCTIONS
 
 // update display function
 function addLetters() {
@@ -70,15 +58,15 @@ function deleteLetter() {
   guessingWordElem[displayCount].textContent = "";
 }
 
-// checking if the guess is correct function
+// checking if the player's guess is correct function
 function checkGuess() {
   // counting the amount of times each letter is repeated in the chosen word
   const counts = {};
-  chosenWord.forEach(function (l) {
-    if (counts[l] === undefined) {
-      counts[l] = 1;
+  chosenWord.forEach(function (let) {
+    if (counts[let] === undefined) {
+      counts[let] = 1;
     } else {
-      counts[l]++;
+      counts[let]++;
     }
   });
 
@@ -101,6 +89,7 @@ function checkGuess() {
     }
   }
 
+  // coloring the guessing boxes
   for (let i = 0; i < 5; i++) {
     if (result[i] === "green") {
       guessingWordElem[displayOrder + i].style.backgroundColor = "#6aaa64";
@@ -110,7 +99,25 @@ function checkGuess() {
   }
 
   wordCount++;
+  currentGuess.length = 0;
+  arrayCount = 0;
 }
+
+// EVENT LISTENERS
+
+// delete button event listener
+deleteButton.addEventListener("click", function () {
+  if (currentGuess.length > 0) {
+    deleteLetter();
+  }
+});
+
+// enter button event listner
+enterButton.addEventListener("click", function () {
+  if (currentGuess.length === 5) {
+    checkGuess();
+  }
+});
 
 // added page theme switch (light mode/dark mode)
 themeSwitchElem.addEventListener("click", function (event) {
