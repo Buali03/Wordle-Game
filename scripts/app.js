@@ -192,7 +192,19 @@ window.addEventListener("click", function (event) {
   }
 });
 
+playAgainBTN.addEventListener("click", init);
+
 function init() {
+  arrayCount = 0;
+  displayCount = 0;
+  wordCount = 0;
+  greenCount = 0;
+  currentLetter;
+  chosenWord;
+  stringChosenWord;
+  randomNum;
+  currentGuess.length = 0;
+
   chooseRandWord();
 }
 init();
