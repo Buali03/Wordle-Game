@@ -8,6 +8,7 @@ const bodyElem = document.querySelector("body");
 let arrayCount = 0;
 let displayCount = 0;
 let wordCount = 0;
+let greenCount = 0;
 const checkingDupArr = [];
 const currentGuess = [];
 const chosenWord = ["A", "R", "R", "O", "W"];
@@ -42,7 +43,7 @@ keyboardElem.appendChild(enterButton);
 
 // update display function
 function addLetters() {
-  if (currentGuess.length < 5) {
+  if (currentGuess.length < 5 && greenCount != 5) {
     currentGuess.push(currentLetter);
     guessingWordElem[displayCount].textContent = currentGuess[arrayCount];
     arrayCount++;
@@ -52,7 +53,7 @@ function addLetters() {
 
 // delete letter function
 function deleteLetter() {
-  if (currentGuess.length > 0) {
+  if (currentGuess.length > 0 && greenCount != 5) {
     currentGuess.pop();
     arrayCount--;
     displayCount--;
@@ -95,12 +96,17 @@ function checkGuess() {
     for (let i = 0; i < 5; i++) {
       if (result[i] === "green") {
         guessingWordElem[displayOrder + i].style.backgroundColor = "#6aaa64";
+        greenCount++;
       } else if (result[i] === "orange") {
         guessingWordElem[displayOrder + i].style.backgroundColor = "#c9b458";
       } else
         guessingWordElem[displayOrder + i].style.backgroundColor = "#787c7e";
     }
-
+    if (greenCount === 5) {
+      console.log("YOU WIN");
+    } else {
+      greenCount = 0;
+    }
     wordCount++;
     currentGuess.length = 0;
     arrayCount = 0;
@@ -111,7 +117,6 @@ function checkGuess() {
 
 // keyboard input event listener
 document.addEventListener("keydown", function (event) {
-  console.log(event);
   if (event.key >= "a" && event.key <= "z") {
     currentLetter = event.key.toUpperCase();
     addLetters();
