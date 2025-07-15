@@ -11,7 +11,11 @@ const bodyElem = document.querySelector("body");
 const hintElem = document.querySelector("#hint");
 const howToPlayBtn = document.getElementById("howToPlayBtn");
 const howToPlayModal = document.getElementById("howToPlayModal");
-const closeBtn = document.querySelector(".close-btn");
+const HTPCloseBTN = document.querySelector(".HTP-close-btn");
+const endGameModalElem = document.getElementById("end-game-modal");
+const endGameCloseBTN = document.querySelector(".end-game-close-btn");
+const endGameMessageElem = document.querySelector(".message");
+const playAgainBTN = document.querySelector("#play-again");
 
 // VARIABLES
 let arrayCount = 0;
@@ -95,7 +99,7 @@ function checkGuess() {
     arrayCount = 0;
     // show hint
     if (wordCount <= 3 && greenCount === 5) {
-      hintElem.textContent = "YOU WON WITHOUT USING ME :'(";
+      hintElem.textContent = "YOU WON WITHOUT USING ME! ಠ_ಠ";
     } else if (wordCount > 2 && greenCount !== 5) {
       hintElem.textContent = wordList[randomNum][1];
     }
@@ -103,9 +107,21 @@ function checkGuess() {
   }
 }
 function showAnswer() {
-  if (wordCount === 6 || greenCount === 5) {
-    console.log(chosenWord);
+  if (greenCount === 5) {
+    endGameMessageElem.textContent = "YOU WON";
+    endGameModalElem.style.display = "block";
+    playAgainBTN.classList.remove("hidden");
   }
+  endGameCloseBTN.addEventListener("click", function () {
+    endGameModalElem.style.display = "none";
+  });
+
+  // Close modal when clicking outside the modal content
+  window.addEventListener("click", function (event) {
+    if (event.target === endGameModalElem) {
+      endGameModalElem.style.display = "none";
+    }
+  });
 }
 
 // EVENT LISTENERS
@@ -155,7 +171,7 @@ howToPlayBtn.addEventListener("click", function () {
 });
 
 // Close modal when clicking the X
-closeBtn.addEventListener("click", function () {
+HTPCloseBTN.addEventListener("click", function () {
   howToPlayModal.style.display = "none";
 });
 

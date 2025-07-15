@@ -17,6 +17,9 @@ h1 {
   color: var(--text-color);
   text-align: center;
 }
+.hidden {
+  visibility: hidden;
+}
 .hint {
   display: flex;
   justify-content: center;
@@ -90,6 +93,8 @@ div.letters {
   align-items: center;
   padding-left: 20%;
   padding-right: 20%;
+  max-width: 50%;
+  margin: 0 auto;
 }
 .keyboard > .row1 {
   display: flex;
@@ -102,7 +107,6 @@ div.letters {
 .keyboard > .row3 {
   display: flex;
   flex-wrap: nowrap;
-  margin-left: 3px;
 }
 /* letters keys */
 button.keys {
@@ -138,7 +142,22 @@ button.tutorial {
   background-color: var(--base-color);
   color: var(--text-color);
 }
+#play-again {
+  height: 30px;
+  border: 3px solid var(--text-color);
+  background-color: var(--base-color);
+  color: var(--text-color);
+}
+*/
 /* modal background */
+
+.button-style {
+  display: flex;
+  justify-content: right;
+  height: 30px;
+  border: 3px solid var(--text-color);
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -177,15 +196,25 @@ button.tutorial {
   height: 40px;
 }
 /* modal close button */
-.close-btn {
+.end-game-close-btn {
   color: var(--text-color);
   float: right;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
 }
+.end-game-close-btn:hover {
+  color: red;
+}
 
-.close-btn:hover {
+.HTP-close-btn {
+  color: var(--text-color);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.HTP-close-btn:hover {
   color: red;
 }
 
