@@ -6,6 +6,9 @@ const guessingWordElem = document.querySelectorAll(".letters");
 const themeSwitchElem = document.querySelector(".theme-switch");
 const bodyElem = document.querySelector("body");
 const hintElem = document.querySelector("#hint");
+const howToPlayBtn = document.getElementById("howToPlayBtn");
+const howToPlayModal = document.getElementById("howToPlayModal");
+const closeBtn = document.querySelector(".close-btn");
 
 // VARIABLES
 let arrayCount = 0;
@@ -45,15 +48,15 @@ keyboardElem.appendChild(enterButton);
 
 // FUNCTIONS
 
+// choose random word from word list
 function chooseRandWord() {
   randomNum = Math.floor(Math.random() * wordList.length);
-  console.log(randomNum);
   chosenWord = wordList[randomNum][0];
   console.log(chosenWord);
 }
 // update display function
 function addLetters() {
-  if (currentGuess.length < 5 && greenCount != 5) {
+  if (currentGuess.length < 5 && greenCount != 5 && wordCount < 6) {
     currentGuess.push(currentLetter);
     guessingWordElem[displayCount].textContent = currentGuess[arrayCount];
     arrayCount++;
@@ -120,9 +123,16 @@ function checkGuess() {
     wordCount++;
     currentGuess.length = 0;
     arrayCount = 0;
+    // show hint
     if (wordCount > 2) {
       hintElem.textContent = wordList[randomNum][1];
     }
+    showAnswer();
+  }
+}
+function showAnswer() {
+  if (wordCount === 6 || greenCount === 5) {
+    console.log(chosenWord);
   }
 }
 
@@ -159,6 +169,24 @@ themeSwitchElem.addEventListener("click", function (event) {
     bodyElem.classList.remove("darkmode");
   }
 });
+
+// Open modal
+howToPlayBtn.addEventListener("click", function () {
+  howToPlayModal.style.display = "block";
+});
+
+// Close modal when clicking the X
+closeBtn.addEventListener("click", function () {
+  howToPlayModal.style.display = "none";
+});
+
+// Close modal when clicking outside the modal content
+window.addEventListener("click", function (event) {
+  if (event.target === howToPlayModal) {
+    howToPlayModal.style.display = "none";
+  }
+});
+
 function init() {
   chooseRandWord();
 }

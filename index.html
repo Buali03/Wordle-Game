@@ -21,7 +21,35 @@
       <h1 id="WORDLE">WORDLE</h1>
     </header>
     <section class="options">
-      <button class="tutorial">How To Play</button>
+      <button class="tutorial" id="howToPlayBtn">How To Play</button>
+      <div id="howToPlayModal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h2>How to Play</h2>
+          <p>
+            A random 5-letter word related to Information Technology (IT) has
+            been selected.
+          </p>
+          <p>Guess the selected word in 6 tries.</p>
+          <p>
+            After each guess, the color of the tiles will change to show how
+            close your guess was to the word.
+          </p>
+          <div class="colors">
+            <div>
+              <div class="green" style="background-color: #6aaa64"></div>
+              <div class="orange" style="background-color: #c9b458"></div>
+              <div class="gray" style="background-color: #787c7e"></div>
+            </div>
+            <div>
+              <p><b>Green: </b>Correct letter in the correct spot.</p>
+              <p><b>Yellow: </b>Correct letter, wrong spot.</p>
+              <p><b>Gray: </b>Letter not in the word.</p>
+            </div>
+          </div>
+          <p><b>GOOD LUCK, HAVE FUN!</b></p>
+        </div>
+      </div>
     </section>
     <div class="hint">
       <div>Hint:</div>
@@ -71,7 +99,6 @@
         <div class="letters" id="5"></div>
       </div>
     </section>
-
     <div class="keyboard"></div>
   </body>
 </html>

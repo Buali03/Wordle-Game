@@ -91,6 +91,7 @@ div.letters {
   padding-left: 20%;
   padding-right: 20%;
 }
+/* letters keys */
 button.key {
   width: 50px;
   height: 50px;
@@ -99,6 +100,7 @@ button.key {
   border: 2px solid var(--text-color);
   background-color: var(--base-color);
 }
+/* delete and enter keys */
 .keyboard > .del,
 .keyboard > .ent {
   width: 100px;
@@ -115,6 +117,7 @@ section.options {
   align-items: center;
   margin-bottom: 20px;
 }
+
 /* how to play button */
 button.tutorial {
   height: 30px;
@@ -122,6 +125,57 @@ button.tutorial {
   background-color: var(--base-color);
   color: var(--text-color);
 }
+/* modal background */
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* modal content */
+.modal-content {
+  background-color: var(--base-color);
+  color: var(--text-color);
+  margin: 15% auto;
+  padding: 20px;
+  border: 3px solid var(--text-color);
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  text-align: center;
+}
+.colors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.green,
+.orange,
+.gray {
+  border: 2px solid var(--text-color);
+  width: 40px;
+  height: 40px;
+}
+/* modal close button */
+.close-btn {
+  color: var(--text-color);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
 /* dark mode toggle switch */
 .switch {
   position: relative;
