@@ -1,3 +1,5 @@
+import { chosenWord } from "./data.js";
+
 // CONSTANTS
 const keyboardElem = document.querySelector(".keyboard");
 const guessingWordElem = document.querySelectorAll(".letters");
@@ -9,9 +11,8 @@ let arrayCount = 0;
 let displayCount = 0;
 let wordCount = 0;
 let greenCount = 0;
-const checkingDupArr = [];
+let currentLetter;
 const currentGuess = [];
-const chosenWord = ["A", "R", "R", "O", "W"];
 
 // creating keyboard buttons
 for (let i = 65; i <= 90; i++) {
@@ -64,12 +65,12 @@ function deleteLetter() {
 function checkGuess() {
   if (currentGuess.length === 5) {
     // counting the amount of times each letter is repeated in the chosen word
-    const counts = {};
-    chosenWord.forEach(function (let) {
-      if (counts[let] === undefined) {
-        counts[let] = 1;
+    const checkingDupArr = {};
+    chosenWord.forEach(function (l) {
+      if (checkingDupArr[l] === undefined) {
+        checkingDupArr[l] = 1;
       } else {
-        counts[let]++;
+        checkingDupArr[l]++;
       }
     });
 
@@ -80,15 +81,15 @@ function checkGuess() {
     for (let i = 0; i < 5; i++) {
       if (currentGuess[i] === chosenWord[i]) {
         result[i] = "green";
-        counts[currentGuess[i]]--;
+        checkingDupArr[currentGuess[i]]--;
       }
     }
 
     // checks if guess is orange (right letter, wrong position)
     for (let i = 0; i < 5; i++) {
-      if (counts[currentGuess[i]] > 0 && result[i] === "gray") {
+      if (checkingDupArr[currentGuess[i]] > 0 && result[i] === "gray") {
         result[i] = "orange";
-        counts[currentGuess[i]]--;
+        checkingDupArr[currentGuess[i]]--;
       }
     }
 
