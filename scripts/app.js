@@ -24,6 +24,7 @@ let wordCount = 0;
 let greenCount = 0;
 let currentLetter;
 let chosenWord;
+let stringChosenWord;
 let randomNum;
 const currentGuess = [];
 
@@ -103,14 +104,23 @@ function checkGuess() {
     } else if (wordCount > 2 && greenCount !== 5) {
       hintElem.textContent = wordList[randomNum][1];
     }
+    if (greenCount !== 5) {
+      greenCount = 0;
+    }
     showAnswer();
   }
 }
 function showAnswer() {
   if (greenCount === 5) {
-    endGameMessageElem.textContent = "YOU WON";
+    stringChosenWord = chosenWord.join("");
+    endGameMessageElem.textContent =
+      "YOU WON! The selected word was: " + stringChosenWord;
     endGameModalElem.style.display = "block";
-    playAgainBTN.classList.remove("hidden");
+  }
+  if (wordCount === 6 && greenCount !== 5) {
+    endGameMessageElem.textContent =
+      "YOU LOST! The selected word was: " + stringChosenWord;
+    endGameModalElem.style.display = "block";
   }
   endGameCloseBTN.addEventListener("click", function () {
     endGameModalElem.style.display = "none";

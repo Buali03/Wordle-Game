@@ -17,9 +17,6 @@ h1 {
   color: var(--text-color);
   text-align: center;
 }
-.hidden {
-  visibility: hidden;
-}
 .hint {
   display: flex;
   justify-content: center;
@@ -96,6 +93,7 @@ div.letters {
   max-width: 50%;
   margin: 0 auto;
 }
+
 .keyboard > .row1 {
   display: flex;
   flex-wrap: nowrap;
