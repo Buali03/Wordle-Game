@@ -1,10 +1,11 @@
-import { chosenWord } from "./data.js";
+import { wordList } from "./data.js";
 
 // CONSTANTS
 const keyboardElem = document.querySelector(".keyboard");
 const guessingWordElem = document.querySelectorAll(".letters");
 const themeSwitchElem = document.querySelector(".theme-switch");
 const bodyElem = document.querySelector("body");
+const hintElem = document.querySelector("#hint");
 
 // VARIABLES
 let arrayCount = 0;
@@ -12,6 +13,8 @@ let displayCount = 0;
 let wordCount = 0;
 let greenCount = 0;
 let currentLetter;
+let chosenWord;
+let randomNum;
 const currentGuess = [];
 
 // creating keyboard buttons
@@ -42,6 +45,12 @@ keyboardElem.appendChild(enterButton);
 
 // FUNCTIONS
 
+function chooseRandWord() {
+  randomNum = Math.floor(Math.random() * wordList.length);
+  console.log(randomNum);
+  chosenWord = wordList[randomNum][0];
+  console.log(chosenWord);
+}
 // update display function
 function addLetters() {
   if (currentGuess.length < 5 && greenCount != 5) {
@@ -111,6 +120,9 @@ function checkGuess() {
     wordCount++;
     currentGuess.length = 0;
     arrayCount = 0;
+    if (wordCount > 2) {
+      hintElem.textContent = wordList[randomNum][1];
+    }
   }
 }
 
@@ -147,5 +159,7 @@ themeSwitchElem.addEventListener("click", function (event) {
     bodyElem.classList.remove("darkmode");
   }
 });
-function init() {}
+function init() {
+  chooseRandWord();
+}
 init();
