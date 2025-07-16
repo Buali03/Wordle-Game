@@ -32,3 +32,14 @@ Here is the link to the <i><a href="https://buali03.github.io/Wordle-Game/">I.T.
 <li><a href="https://www.w3schools.com/howto/howto_css_switch.asp">Page theme switch button</li>
 <li><a href="https://getbootstrap.com/docs/4.0/components/modal/">Modal bootstrap</li>
 </ul>
+
+<h2>Technologies Used</h2>
+<p>
+<b>HTML</b> was the first technology used for this project. It was used to create all of elements and divs. Which included the guessing word boxes elements and the keyboard. Lastly, the buttons and inputs like how to play button, play again button, and the theme switch toggle.
+</p>
+<p>
+<b>CSS</b> was the second technology used for this project. It was used to organize and design the page. Controlling how each element would look like and positioned. Also, controlling the pop ups and the hidden elements. 
+</p>
+<p>
+<b>JavaScript</b> was the third and final technology used for this project. It was used to create functionality of the entire code. Allowing the user to input any 5-letter word as their guess. Enabling both in-screen keyboard input and actual keyboard inputs. Comparing the user guess and the computer selected. Then, to change the colors and the classes of the HTML elements when needed. It creates the entire logic of the game.
+</p>
