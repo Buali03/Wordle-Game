@@ -74,6 +74,15 @@ function checkGuess() {
     // checks if guess is green (right letter, right position)
     for (let i = 0; i < 5; i++) {
       if (currentGuess[i] === chosenWord[i]) {
+        keysElem.forEach((element) => {
+          if (element.textContent === currentGuess[i]) {
+            if (element.classList.contains("orange-key")) {
+              element.classList.remove("orange-key");
+            }
+            element.classList.add("green-key");
+          }
+        });
+
         result[i] = "green";
         checkingDupArr[currentGuess[i]]--;
       }
@@ -82,6 +91,14 @@ function checkGuess() {
     // checks if guess is orange (right letter, wrong position)
     for (let i = 0; i < 5; i++) {
       if (checkingDupArr[currentGuess[i]] > 0 && result[i] === "gray") {
+        keysElem.forEach((element) => {
+          if (
+            !element.classList.contains("green-key") &&
+            element.textContent === currentGuess[i]
+          ) {
+            element.classList.add("orange-key");
+          }
+        });
         result[i] = "orange";
         checkingDupArr[currentGuess[i]]--;
       }
@@ -93,8 +110,13 @@ function checkGuess() {
         greenCount++;
       } else if (result[i] === "orange") {
         guessingWordElem[displayOrder + i].style.backgroundColor = "#c9b458";
-      } else
+      } else {
+        keysElem.forEach((element) => {
+          if (element.textContent === currentGuess[i])
+            element.classList.add("gray-key");
+        });
         guessingWordElem[displayOrder + i].style.backgroundColor = "#787c7e";
+      }
     }
     wordCount++;
     currentGuess.length = 0;
@@ -145,6 +167,16 @@ function clearGuess(i) {
   guessingWordElem[i].style.backgroundColor = "var(--base-color)";
   guessingWordElem[i].textContent = "";
   hintElem.textContent = "After the 3rd Guess";
+
+  keysElem.forEach((element) => {
+    if (element.classList.contains("green-key")) {
+      element.classList.remove("green-key");
+    } else if (element.classList.contains("orange-key")) {
+      element.classList.remove("orange-key");
+    } else if (element.classList.contains("gray-key")) {
+      element.classList.remove("gray-key");
+    }
+  });
 }
 // EVENT LISTENERS
 
