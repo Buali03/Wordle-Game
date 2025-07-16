@@ -35,7 +35,7 @@ const currentGuess = [];
 function chooseRandWord() {
   randomNum = Math.floor(Math.random() * wordList.length);
   chosenWord = wordList[randomNum][0];
-  console.log(chosenWord);
+  // console.log(chosenWord);
 }
 // update display function
 function addLetters() {
