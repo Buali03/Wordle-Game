@@ -41,9 +41,9 @@ Here is the link to the <i><a href="https://buali03.github.io/Wordle-Game/">I.T.
 <b>CSS</b> was the second technology used for this project. It was used to organize and design the page. Controlling how each element would look like and positioned. Also, controlling the pop ups and the hidden elements. 
 </p>
 <p>
-<b>JavaScript</b> was the third and final technology used for this project. It was used to create functionality of the entire code. Allowing the user to input any 5-letter word as their guess. Enabling both in-screen keyboard input and actual keyboard inputs. Comparing the user guess and the computer selected. Then, to change the colors and the classes of the HTML elements when needed. It creates the entire logic of the game.
+<b>JavaScript</b> was the third and final technology used for this project. It was used to create functionality of the entire game. Allowing the user to input any 5-letter word as their guess. Enabling both in-screen keyboard input and actual keyboard inputs. Comparing the user's guess and the computer selected and checking if they match. Then, to change the colors and the classes of the HTML elements when needed. In conclusion, it created the entire logic of the game.
 </p>
 <h2>Next Steps</h2>
 <p>
-Future enhancements could include creating mroe difficuly levels to the game. Like 6-letter words or 7-letter words instead of 5-letter words. Also, removing the hint and give the user less guessing attempts to make the game harder. 
+Future enhancements could include creating more difficuly levels to the game. Like 6-letter words or 7-letter words instead of 5-letter words. Also, removing the hint and give the user less guessing attempts to make the game harder. 
 </p>
