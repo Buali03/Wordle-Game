@@ -111,8 +111,8 @@ function checkGuess() {
   }
 }
 function showAnswer() {
+  stringChosenWord = chosenWord.join("");
   if (greenCount === 5) {
-    stringChosenWord = chosenWord.join("");
     endGameMessageElem.textContent =
       "YOU WON! The selected word was: " + stringChosenWord;
     endGameModalElem.style.display = "block";
