@@ -29,6 +29,6 @@ Here is the link to the <i><a href="https://buali03.github.io/Wordle-Game/">I.T.
 <h2>References</h2>
 <p><b>CSS</b></p>
 <ul>
-<li a href="https://www.w3schools.com/howto/howto_css_switch.asp">Page theme switch button</li>
-<li a href="https://getbootstrap.com/docs/4.0/components/modal/">Modal bootstrap</li>
+<li><a href="https://www.w3schools.com/howto/howto_css_switch.asp">Page theme switch button</li>
+<li><a href="https://getbootstrap.com/docs/4.0/components/modal/">Modal bootstrap</li>
 </ul>
