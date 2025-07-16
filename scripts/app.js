@@ -163,6 +163,7 @@ function showAnswer() {
   });
 }
 
+// clearing the game guesses
 function clearGuess(i) {
   guessingWordElem[i].style.backgroundColor = "var(--base-color)";
   guessingWordElem[i].textContent = "";
@@ -236,8 +237,10 @@ window.addEventListener("click", function (event) {
   }
 });
 
+// play again button event listener
 playAgainBTN.addEventListener("click", init);
 
+// init game function
 function init() {
   for (let i = 0; i < displayCount; i++) {
     clearGuess(i);
