@@ -113,11 +113,14 @@ function checkGuess() {
 }
 function showAnswer() {
   stringChosenWord = chosenWord.join("");
+
+  // winning message
   if (greenCount === 5) {
     endGameMessageH1Elem.style.color = "#6aaa64";
     endGameMessageH1Elem.textContent = "YOU WON!";
     endGameModalElem.style.display = "block";
   }
+  // losing message
   if (wordCount === 6 && greenCount !== 5) {
     endGameMessageH1Elem.style.color = "red";
     endGameMessageH1Elem.textContent = "YOU LOST!";
@@ -138,6 +141,11 @@ function showAnswer() {
   });
 }
 
+function clearGuess(i) {
+  guessingWordElem[i].style.backgroundColor = "var(--base-color)";
+  guessingWordElem[i].textContent = "";
+  hintElem.textContent = "After the 3rd Guess";
+}
 // EVENT LISTENERS
 
 // keyboard input event listener
@@ -199,6 +207,9 @@ window.addEventListener("click", function (event) {
 playAgainBTN.addEventListener("click", init);
 
 function init() {
+  for (let i = 0; i < displayCount; i++) {
+    clearGuess(i);
+  }
   arrayCount = 0;
   displayCount = 0;
   wordCount = 0;
