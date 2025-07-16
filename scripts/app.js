@@ -14,7 +14,8 @@ const howToPlayModal = document.getElementById("howToPlayModal");
 const HTPCloseBTN = document.querySelector(".HTP-close-btn");
 const endGameModalElem = document.getElementById("end-game-modal");
 const endGameCloseBTN = document.querySelector(".end-game-close-btn");
-const endGameMessageElem = document.querySelector(".message");
+const endGameMessageH1Elem = document.querySelector("#end-game-message-h1");
+const endGameMessageParaElem = document.querySelector("#end-game-message-p");
 const playAgainBTN = document.querySelector("#play-again");
 
 // VARIABLES
@@ -113,15 +114,18 @@ function checkGuess() {
 function showAnswer() {
   stringChosenWord = chosenWord.join("");
   if (greenCount === 5) {
-    endGameMessageElem.textContent =
-      "YOU WON! The selected word was: " + stringChosenWord;
+    endGameMessageH1Elem.style.color = "#6aaa64";
+    endGameMessageH1Elem.textContent = "YOU WON!";
     endGameModalElem.style.display = "block";
   }
   if (wordCount === 6 && greenCount !== 5) {
-    endGameMessageElem.textContent =
-      "YOU LOST! The selected word was: " + stringChosenWord;
+    endGameMessageH1Elem.style.color = "red";
+    endGameMessageH1Elem.textContent = "YOU LOST!";
     endGameModalElem.style.display = "block";
   }
+  endGameMessageParaElem.textContent =
+    "The selected word was: " + stringChosenWord;
+
   endGameCloseBTN.addEventListener("click", function () {
     endGameModalElem.style.display = "none";
   });
