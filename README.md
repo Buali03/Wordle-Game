@@ -1,6 +1,6 @@
 <h1>Project 1: I.T. Wordle</h1>
 <img src="PagePic.png">
-<h2>Game Description</h2>
+<h2>Getting Started</h2>
 <p>
 The I.T. Wordle game is a word-puzzle guessing game where players need to guess the randomly selected 5-letter word by the computer within 6 guesses. The computer selects a random word from the stored word list that contains nearly 100 words related to I.T.
 </p>
@@ -26,7 +26,7 @@ Here is the link to the <i><a href="https://buali03.github.io/Wordle-Game/">I.T.
 </p>
 <p>Please try out the game and have fun! </p>
 
-<h2>References</h2>
+<h2>Attributions</h2>
 <p><b>CSS</b></p>
 <ul>
 <li><a href="https://www.w3schools.com/howto/howto_css_switch.asp">Page theme switch button</li>
@@ -42,4 +42,8 @@ Here is the link to the <i><a href="https://buali03.github.io/Wordle-Game/">I.T.
 </p>
 <p>
 <b>JavaScript</b> was the third and final technology used for this project. It was used to create functionality of the entire code. Allowing the user to input any 5-letter word as their guess. Enabling both in-screen keyboard input and actual keyboard inputs. Comparing the user guess and the computer selected. Then, to change the colors and the classes of the HTML elements when needed. It creates the entire logic of the game.
+</p>
+<h2>Next Steps</h2>
+<p>
+Future enhancements could include creating mroe difficuly levels to the game. Like 6-letter words or 7-letter words instead of 5-letter words. Also, removing the hint and give the user less guessing attempts to make the game harder. 
 </p>
