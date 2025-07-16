@@ -25,6 +25,9 @@ h1 {
   margin: 10px;
   color: var(--text-color);
 }
+button {
+  cursor: pointer;
+}
 /* player word guessing section */
 section.guess {
   display: flex;
@@ -78,7 +81,6 @@ div.letters {
   align-items: center;
   border: 3px solid var(--text-color);
   background-color: var(--base-color);
-
   border-radius: 15%;
 }
 /* in-screen keyboard */
@@ -115,6 +117,10 @@ button.keys {
   border: 2px solid var(--text-color);
   background-color: var(--base-color);
 }
+button.keys:hover {
+  background-color: var(--base-color);
+  opacity: 0.5;
+}
 /* delete and enter keys */
 .keyboard > .row1 > .del,
 .keyboard > .row2 > .ent {
@@ -124,6 +130,11 @@ button.keys {
   color: var(--base-color);
   border: 2px solid var(--base-color);
   background-color: var(--text-color);
+}
+.keyboard > .row1 > .del:hover,
+.keyboard > .row2 > .ent:hover {
+  background-color: var(--text-color);
+  opacity: 0.5;
 }
 /* options section */
 section.options {
@@ -140,11 +151,19 @@ button.tutorial {
   background-color: var(--base-color);
   color: var(--text-color);
 }
+button.tutorial:hover {
+  background-color: var(--base-color);
+  opacity: 0.5;
+}
 #play-again {
   height: 30px;
   border: 3px solid var(--text-color);
   background-color: var(--base-color);
   color: var(--text-color);
+}
+button.play-again-btn:hover {
+  background-color: var(--base-color);
+  opacity: 0.5;
 }
 */
 /* modal background */
